@@ -1,4 +1,4 @@
-@import "dreamaker_design_guide";
+@import "_dreamaker_design_guide";
 
 $primaryColor: (
   btn-border: #65b836,
@@ -16,6 +16,9 @@ $descriptionTextColor: #767676;
 $dividerColor: #e5e5e5;
 $footerLinkColor: #4078c0;
 $inner-max-width: 980px;
+
+$mediumDevices: 1024px;
+$smallDevices: 768px;
 
 .body__container {
   @include dm-subtitle-1;
@@ -187,8 +190,10 @@ header {
     }
 
     #toggle-btn {
-      width: 0px;
-      height: 0px;
+      display: none;
+      background: url("../img/toggle-btn.svg");
+      width: 18px;
+      height: 24px;
       position: absolute;
       top: 16px;
       right: 20px;
@@ -350,8 +355,6 @@ header {
     padding: 80px 0;
 
     .summary {
-      .summary__title {
-      }
       .summary__description {
         color: $descriptionTextColor;
       }
@@ -418,6 +421,10 @@ footer {
     .site-links {
       display: flex;
 
+      &:first-child {
+        order: 2;
+      }
+
       li {
         margin-right: 10px;
         color: #767676;
@@ -433,6 +440,8 @@ footer {
     }
 
     .logo {
+      order: 1;
+
       a {
         width: 32px;
         height: 32px;
@@ -449,86 +458,5 @@ footer {
   }
 }
 
-// MEDIA
-$smallDevices: 768px;
-$mediumDevices: 1024px;
-
-@media (max-width: $mediumDevices) {
-  header .inner {
-    max-width: none;
-    height: auto;
-    padding: 0 20px;
-    flex-direction: column;
-
-    .logo {
-      padding: 12px;
-    }
-
-    .menu-group {
-      display: block;
-
-      .main-menu {
-        display: block;
-        margin-bottom: 8px;
-
-        li {
-          border-top: 1px solid $dividerColor;
-
-          a {
-            padding: 16px 0;
-          }
-        }
-      }
-    }
-
-    .sign-group {
-      display: block;
-      padding: 8px 0 20px;
-
-      .btn-group {
-        display: block;
-        margin: 0px;
-
-        .btn {
-          justify-content: center;
-        }
-
-        .sign-in {
-          margin-right: 0px;
-          margin-bottom: 12px;
-        }
-      }
-
-      #search-form {
-        margin-top: 12px;
-        margin-right: 0px;
-
-        #search {
-          width: 100%;
-          height: 40px;
-          text-align: center;
-        }
-      }
-
-      .sub-menu {
-        margin-top: 12px;
-        margin-right: 0px;
-        justify-content: center;
-      }
-    }
-
-    .toggle {
-      display: none !important;
-    }
-
-    .toggle.on {
-      display: block !important;
-    }
-
-    #toggle-btn {
-      background: url("../img/toggle-btn.svg");
-      width: 18px;
-      height: 24px;
-    }
-  }
-}
+@import "_main_medium";
+@import "_main_small";

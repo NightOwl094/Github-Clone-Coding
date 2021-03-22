@@ -1,0 +1,77 @@
+$smallDevices: 768px;
+$dividerColor: #e5e5e5;
+
+@media (max-width: $smallDevices) {
+  .summary__title {
+    font-size: 34px !important;
+  }
+
+  // where is
+  .where-is {
+    .inner {
+      padding: 80px 0 0 0;
+
+      .summary {
+        text-align: center;
+      }
+    }
+  }
+
+  // feature
+  .feature {
+    .tiles {
+      padding-bottom: 0;
+
+      ul {
+        grid-template-columns: repeat(1, 1fr);
+
+        li {
+          border-right: none;
+          border-bottom: 1px solid $dividerColor;
+        }
+      }
+    }
+  }
+
+  // pricing
+  .pricing {
+    .inner {
+      .card {
+        display: block;
+
+        .cell-1 {
+          display: flex;
+          .btn {
+            display: inline-flex;
+            margin: 0 auto;
+          }
+        }
+
+        .cell-2 {
+          border-left: none;
+          border-top: 1px solid $dividerColor;
+        }
+      }
+    }
+  }
+
+  // footer
+  footer {
+    .inner {
+      display: block;
+
+      .site-links {
+        display: block;
+        text-align: center;
+
+        &:first-child {
+          margin-bottom: 20px;
+        }
+
+        li {
+          display: inline;
+        }
+      }
+    }
+  }
+}
